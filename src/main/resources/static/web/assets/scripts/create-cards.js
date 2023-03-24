@@ -18,7 +18,7 @@ createApp({
     methods: {   
         loadData:function(){
             axios
-            .get("http://localhost:8080/api/clients/current")
+            .get("/api/clients/current")
                 .then(res => {
                     this.client = res.data
                 })
@@ -30,7 +30,7 @@ createApp({
                     cardType = cardType.charAt(0).toUpperCase() + cardType.slice(1)
             const postCard = async () => {
                 try {
-                    const res = await axios.post('http://localhost:8080/api/clients/current/cards', "cardType="+this.type+"&colorType="+this.color)
+                    const res = await axios.post('/api/clients/current/cards', "cardType="+this.type+"&colorType="+this.color)
                     Swal.fire({
                                 title:'Created!',
                                 text:cardColor+' '+cardType+' card has been created.',

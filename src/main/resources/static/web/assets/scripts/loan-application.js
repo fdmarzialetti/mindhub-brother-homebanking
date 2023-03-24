@@ -21,7 +21,7 @@ createApp({
     methods: {
         loadData:function(){
             axios
-                .get("http://localhost:8080/api/loans")
+                .get("/api/loans")
                 .then(res => {
                     this.loans=res.data
                 })
@@ -33,7 +33,7 @@ createApp({
                     this.maxAmount = this.selectedLoan.maxAmount
                 })
             axios
-            .get("http://localhost:8080/api/clients/current/accounts")
+            .get("/api/clients/current/accounts")
             .then(res=>{
                 this.clientAccounts=res.data
                 this.account=this.clientAccounts[0]

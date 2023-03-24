@@ -22,7 +22,7 @@ createApp({
     methods: {
         loadData: function () {
             axios
-                .get("http://localhost:8080/api/clients/current")
+                .get("/api/clients/current")
                 .then(res => this.client = res.data)
                 .then(res => {
                     if (this.client.accounts.length !== 0) {

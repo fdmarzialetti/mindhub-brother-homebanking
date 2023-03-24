@@ -19,7 +19,7 @@ createApp({
     methods: {
         loadData: function () {
             axios
-                .get("http://localhost:8080/api/clients/current")
+                .get("/api/clients/current")
                 .then(res => {
                     this.client = res.data
                     this.filterCards();
@@ -57,7 +57,7 @@ createApp({
                 confirmButtonText: 'Delete'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    axios.post("http://localhost:8080/api/clients/current/deleteCard", "cardID=" + cardID)
+                    axios.post("api/clients/current/deleteCard", "cardID=" + cardID)
                         .then(res=>{
                             Swal.fire({
                                 title:'Deleted!',

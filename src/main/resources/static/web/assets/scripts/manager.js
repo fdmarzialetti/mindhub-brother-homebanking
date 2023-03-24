@@ -83,7 +83,7 @@ createApp({
             if(this.validateInputs(this.clientToEdit)){
                 if(confirm("you want to save the changes?")){
                 axios
-                .patch("http://localhost:8080/rest/clients/"+this.clientToEdit.id,this.clientToEdit)
+                .patch("/rest/clients/"+this.clientToEdit.id,this.clientToEdit)
                 .then(res=>{
                     this.loadData()
                     //devolver al modal la accion de cerrar.
@@ -92,7 +92,7 @@ createApp({
             }
         },
         loadLoans:function(){
-            axios.get("http://localhost:8080/api/loans")
+            axios.get("/api/loans")
             .then(res=> {
                 this.loans=res.data
             })
@@ -105,7 +105,7 @@ createApp({
         postLoan:function(){
             console.log(this.newLoan.payments)
             axios
-            .post("http://localhost:8080/api/admin/loan", 
+            .post("/api/admin/loan", 
             "name="+this.newLoan.name+
             "&maxAmount="+this.newLoan.maxAmount+
             "&payments="+this.newLoan.payments+
