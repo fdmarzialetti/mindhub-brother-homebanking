@@ -58,7 +58,7 @@ h2{
     width: 100%;
     color: white;
     height: auto;
-    border-top: 3px solid var(--ligthgray);;
+    border-top: 2px solid var(--ligthgray);;
 }
 
 main {
@@ -152,7 +152,7 @@ main {
 
 .create-cards-section{
     background-color: rgba(84, 11, 255, 0.2);
-    border-top: 3px solid var(--ligthgray);
+    border-top: 2px solid var(--ligthgray);
     padding-bottom: 4em;
 }
 

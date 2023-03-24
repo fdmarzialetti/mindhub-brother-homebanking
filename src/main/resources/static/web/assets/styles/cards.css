@@ -62,7 +62,7 @@ h2{
     width: 100%;
     color: white;
     height: auto;
-    border-top: 3px solid var(--ligthgray);;
+    border-top: 2px solid var(--ligthgray);;
 }
 
 
@@ -228,7 +228,7 @@ main{
 }
 
 .request-card-secction{
-    border-top: 3px solid var(--ligthgray);
+    border-top: 2px solid var(--ligthgray);
     background-color: rgba(0, 255, 234, 0.4)!important;
     height: auto;
     padding: 1em;

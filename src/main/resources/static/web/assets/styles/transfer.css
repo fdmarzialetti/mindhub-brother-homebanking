@@ -60,11 +60,11 @@ h2{
     width: 100%;
     color: white;
     height: auto;
-    border-top: 3px solid var(--ligthgray);;
+    border-top: 2px solid var(--ligthgray);;
 }
 
 main {
-    border-top: 3px solid var(--ligthgray);
+    border-top: 2px solid var(--ligthgray);
     min-height: 50vh;
     display: flex;
     flex-direction: column;

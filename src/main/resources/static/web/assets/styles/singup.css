@@ -42,7 +42,7 @@ header {
     background-color: var(--darkgray);
     width: 100%;
     color: white;
-    border-bottom: 3px solid var(--gray);
+    border-bottom: 2px solid var(--gray);
 }
 
 main {

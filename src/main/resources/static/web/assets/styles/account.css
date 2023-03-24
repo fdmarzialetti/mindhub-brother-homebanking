@@ -35,7 +35,7 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 6em;
-    border-bottom: 3px solid var(--gray);
+    border-bottom: 2px solid var(--gray);
 }
 
 @font-face {
@@ -65,7 +65,7 @@ main{
     width: 100%;
     color: white;
     height: auto;
-    border-top: 3px solid var(--ligthgray);;
+    border-top: 2px solid var(--ligthgray);;
 }
 
 
