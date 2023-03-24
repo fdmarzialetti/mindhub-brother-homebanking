@@ -65,7 +65,7 @@ h2{
 
 main {
     border-top: 3px solid var(--ligthgray);
-    min-height: 90vh;
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;

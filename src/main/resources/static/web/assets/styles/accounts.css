@@ -52,7 +52,7 @@ header {
 
 main{
     height: auto;
-    min-height: 90vh;
+    min-height: 50vh;
 }
 
 .account-section{

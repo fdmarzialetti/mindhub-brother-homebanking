@@ -64,7 +64,7 @@ h2{
 }
 
 main {
-    min-height: 90vh;
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
