@@ -74,7 +74,7 @@ main{
     width: 100%;
     color: white;
     height: auto;
-    border-top: 1px solid var(--ligthgray);;
+    border-top: 3px solid var(--ligthgray);;
 }
 
 .account-container{
@@ -86,7 +86,7 @@ main{
     background-color: rgba(153, 255, 177, 0.5);
     background-size: cover;
     border: 2px solid var(--ligthgray);
-    border-color: 2px solid black;
+    border-color: 3px solid black;
 }
 
 .account-container p{
