@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
+    <title>MHB CREATE CARDS</title>
+
+    <!--FONTS AWESOME-->
+    <script src="https://kit.fontawesome.com/8c45d456b7.js" crossorigin="anonymous"></script>
+    <!--CSS-->
+    <link rel="stylesheet" href="./assets/styles/transfer.css">
+    <!--CHART-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+    <!--VUE-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.47/dist/vue.global.min.js"></script>
+    <!--AXIOS-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!--APEXCHART-->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <!--BOOTSTRA-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body id="app">
+    <div>
+        <header class="bg-dark">
+            <div class="logo-container">
+                <div class="css-1vs2kf0">
+                    <div style="transform: scale(1);">
+                        <svg width="6em" height="10em" viewBox="0 0 370.38461538461536 208" class="css-1j8o68f">
+                            <defs id="SvgjsDefs9211"></defs>
+                            <g id="SvgjsG9212" featurekey="rootContainer" transform="matrix(1,0,0,1,0,19)"
+                                fill="#495a90">
+                                <rect y="0" height="1" width="1" opacity="0"></rect>
+                                <rect y="184" width="370" height="5"></rect>
+                            </g>
+                            <g id="SvgjsG9213" featurekey="symbolFeature-0"
+                                transform="matrix(1.922995811781587,0,0,1.922995811781587,-28.83926305387372,-1.2300718203422782)"
+                                fill="#ff4a6d">
+                                <rect xmlns="http://www.w3.org/2000/svg" x="25.249" y="20.252"
+                                    transform="matrix(0.7071 0.7071 -0.7071 0.7071 46.463 -22.1737)" fill="none"
+                                    stroke="#ff4a6d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-miterlimit="10" width="49.499" height="49.497"></rect>
+                                <path xmlns="http://www.w3.org/2000/svg" stroke="#ff4a6d" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                                    d="M49.999,69.395  l24.394-24.392L50,20.608L25.608,45.002L49.999,69.395z M63.785,45.002L49.999,58.787L36.214,45.002L50,31.215L63.785,45.002z">
+                                </path>
+                                <rect xmlns="http://www.w3.org/2000/svg" x="47.754" y="42.754"
+                                    transform="matrix(-0.707 0.7072 -0.7072 -0.707 117.1804 41.4576)" stroke="#ff4a6d"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-miterlimit="10" width="4.496" height="4.497"></rect>
+                                <polygon xmlns="http://www.w3.org/2000/svg" stroke="#ff4a6d" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                                    points="  49.999,80 20,50.004 15.002,55 49.999,90 85,55 80,50 "></polygon>
+                            </g>
+                            <g id="SvgjsG9214" featurekey="nameFeature-0"
+                                transform="matrix(0.9581253831766885,0,0,0.9581253831766885,151.98736751520283,52.13582998729735)"
+                                fill="#fffef6">
+                                <path
+                                    d="M33.828 40 l-3.8086 0 l-1.8164 -22.461 l-8.5352 22.461 l-2.3633 0 l-8.4766 -22.383 l-1.8555 22.383 l-3.8281 0 l2.1289 -27.617 l5.2539 0 l7.9492 20.879 l7.9883 -20.879 l5.2539 0 z M47.64207109375 40 l0 -27.617 l3.8867 0 l0 27.617 l-3.8867 0 z M85.0307734375 12.383 l3.8672 0 l0 27.617 l-4.1992 0 l-14.434 -21.914 l0 21.914 l-3.8477 0 l0 -27.617 l4.1602 0 l14.453 21.816 l0 -21.816 z M103.76609453125 40 l0 -27.617 l9.1016 0 c8.4961 0 12.813 5.7031 12.813 13.789 c0 8.1445 -4.3164 13.828 -12.813 13.828 l-9.1016 0 z M107.65279453125 36.4844 l5.0586 0 c6.0352 0 8.9063 -4.0039 8.9063 -10.313 c0 -6.2695 -2.8711 -10.293 -8.9063 -10.293 l-5.0586 0 l0 20.605 z M156.232203125 12.383 l3.8867 0 l0 27.617 l-3.8867 0 l0 -12.109 l-13.574 0 l0 12.109 l-3.9258 0 l0 -27.617 l3.9258 0 l0 12.051 l13.574 0 l0 -12.051 z M184.59710546875 40.37109 c-5.7227 0 -10.156 -3.3789 -10.156 -9.6094 l0 -18.379 l3.8867 0 l0 17.832 c0 4.5508 2.7344 6.6406 6.2695 6.6406 s6.3281 -2.1094 6.3281 -6.6406 l0 -17.832 l3.8867 0 l0 18.379 c0 6.2305 -4.4531 9.6094 -10.215 9.6094 z M222.4930390625 25.547 c3.2617 0.82031 5.4492 3.0664 5.4492 6.9141 c0 4.4336 -3.0078 7.5391 -7.9688 7.5391 l-10.859 0 l0 -27.617 l8.4766 0 c5.0977 0 8.3203 2.9688 8.3203 7.3438 c0 2.6172 -1.1914 4.7656 -3.418 5.8203 z M222.2780390625 19.98 c0 -2.3828 -1.7188 -4.2383 -4.707 -4.2383 l-4.6875 0 l0 8.5938 l5.293 0 c2.5 0 4.1016 -1.9531 4.1016 -4.3555 z M219.3100390625 36.582 c3.1445 0 4.8438 -2.1094 4.8438 -4.5117 c0 -2.5391 -1.7773 -4.5703 -5.0781 -4.5703 l-6.1914 0 l0 9.082 l6.4258 0 z">
+                                </path>
+                            </g>
+                            <g id="SvgjsG9215" featurekey="nameFeature-1"
+                                transform="matrix(0.8875468229089221,0,0,0.8875468229089221,151.27283676435272,90.33906257868026)"
+                                fill="#fffef6">
+                                <path
+                                    d="M17.578 25.547 c3.2617 0.82031 5.4492 3.0664 5.4492 6.9141 c0 4.4336 -3.0078 7.5391 -7.9688 7.5391 l-10.859 0 l0 -27.617 l8.4766 0 c5.0977 0 8.3203 2.9688 8.3203 7.3438 c0 2.6172 -1.1914 4.7656 -3.418 5.8203 z M17.363 19.98 c0 -2.3828 -1.7188 -4.2383 -4.707 -4.2383 l-4.6875 0 l0 8.5938 l5.293 0 c2.5 0 4.1016 -1.9531 4.1016 -4.3555 z M14.395 36.582 c3.1445 0 4.8438 -2.1094 4.8438 -4.5117 c0 -2.5391 -1.7773 -4.5703 -5.0781 -4.5703 l-6.1914 0 l0 9.082 l6.4258 0 z M50.669871093750004 40 l-7.1484 -12.422 l-3.8672 0 l0 12.422 l-3.8867 0 l0 -27.617 l9.2969 0 c5.7813 0 8.418 3.5352 8.418 7.8711 c0 3.8477 -2.2656 6.5234 -6.0547 7.168 l7.793 12.578 l-4.5508 0 z M39.65377109375 15.742 l0 8.8672 l4.8828 0 c3.5938 0 5.2148 -1.7969 5.2148 -4.4141 c0 -2.5781 -1.6211 -4.4531 -5.2148 -4.4531 l-4.8828 0 z M79.2492734375 40.37109 c-7.832 0 -13.809 -5.3906 -13.809 -14.199 c0 -8.7891 5.9766 -14.16 13.809 -14.16 c7.793 0 13.789 5.3711 13.789 14.16 c0 8.8086 -5.9961 14.199 -13.789 14.199 z M79.2492734375 36.7187 c5.5273 0 9.9023 -3.8281 9.9023 -10.547 c0 -6.6602 -4.375 -10.488 -9.9023 -10.488 c-5.5469 0 -9.9414 3.8281 -9.9414 10.488 c0 6.7188 4.3945 10.547 9.9414 10.547 z M120.69945703125 12.383 l0 3.4961 l-6.9922 0 l0 24.121 l-3.8477 0 l0 -24.121 l-7.0117 0 l0 -3.4961 l17.852 0 z M149.923609375 12.383 l3.8867 0 l0 27.617 l-3.8867 0 l0 -12.109 l-13.574 0 l0 12.109 l-3.9258 0 l0 -27.617 l3.9258 0 l0 12.051 l13.574 0 l0 -12.051 z M183.71851171875 15.879000000000001 l-11.055 0 l0 8.5938 l9.7461 0 l0 3.4766 l-9.7461 0 l0 8.5352 l11.055 0 l0 3.5156 l-15.02 0 l0 -27.617 l15.02 0 l0 3.4961 z M211.6732890625 40 l-7.1484 -12.422 l-3.8672 0 l0 12.422 l-3.8867 0 l0 -27.617 l9.2969 0 c5.7813 0 8.418 3.5352 8.418 7.8711 c0 3.8477 -2.2656 6.5234 -6.0547 7.168 l7.793 12.578 l-4.5508 0 z M200.6571890625 15.742 l0 8.8672 l4.8828 0 c3.5938 0 5.2148 -1.7969 5.2148 -4.4141 c0 -2.5781 -1.6211 -4.4531 -5.2148 -4.4531 l-4.8828 0 z M237.01069140625 40.37109 c-5.7617 0 -9.9805 -2.7539 -10.918 -7.4414 l3.9648 -0.9375 c0.625 3.2227 3.418 5.0781 7.0898 5.0781 c2.9492 0 5.7813 -1.2109 5.7227 -4.5313 c-0.039063 -3.2813 -3.5938 -4.1797 -7.3633 -5.2148 c-4.2773 -1.1719 -8.5547 -2.5195 -8.5547 -7.5977 c0 -5.1367 4.2383 -7.7148 9.2578 -7.7148 c4.8633 0 9.2383 2.0508 10.273 6.7969 l-3.7695 0.95703 c-0.68359 -3.0664 -3.2422 -4.4336 -6.3281 -4.4336 c-2.7734 0 -5.5273 1.2109 -5.5273 4.3555 c0 2.8516 3.0859 3.6914 6.582 4.6289 c4.3945 1.1914 9.4336 2.5586 9.4336 8.1055 c0 5.5859 -4.6875 7.9492 -9.8633 7.9492 z">
+                                </path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="slogan w-100 d-flex justify-content-center align-items-center mt-2">
+                <h2 class="ps-4">Save your earnings, save your future</h2>
+            </div>
+        </header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid bg-dark">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="./accounts.html">Accounts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./cards.html">Cards</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Transfer</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <main>
+        <div class="form-container col-10 col-lg-6 bg-secondary m-5 p-3 rounded-2">
+            <div class="mb-3">
+                <label for="originAccount" class="div-label">Origin Account</label>
+                <div class="mb-3">
+                    <select v-model="originNumber" @change="setLeftAccounts" class="form-select" aria-label="Default select example">
+                        <template v-for="account of client.accounts">
+                            <option class="text-black" :value="account.number" :id="account.number">{{account.number}}</option>
+                        </template>
+                    </select>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="mb-3">
+                    <div class="form-check mb-1">
+                        <input @change="setRadio" class="form-check-input" type="radio" id="another" name="radio" checked/>
+                        <label class="form-check-label" for="another">
+                            Another account
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <template v-if="client.accounts.length>1">
+                            <input @change="setRadio" class="form-check-input" type="radio" id="own" name="radio" />
+                            <label class="form-check-label" for="own">  
+                                Own account
+                            </label>
+                        </template>
+                        
+                    </div>
+                </div>
+            </div>
+            <template v-if="radio=='own'">
+                <div class="mb-3">
+                    <label for="DestinationAccount" class="form-label">Destination Account</label>
+                    <select v-model="destinationNumber" class="form-select text-decoration-none" aria-label="Default select example">
+                        <template v-for="account of leftAccounts">
+                            <option class="text-black" :value="account.number">{{account.number}}</option>
+                        </template>
+                    </select>
+                </div>
+            </template>
+            <template v-else>
+                <div class="mb-3">
+                    <label for="DestinationAccount" class="form-label">Destination Account</label>
+                    <input v-model="destinationNumber" type="text" class="form-control" id="DestinationAccount" placeholder="Enter the account number">
+                </div>
+            </template>
+            <div class="mb-3">
+                <label for="amount" class="form-label">Amount</label>
+                <input v-model="amount" type="number" class="form-control" id="amount">
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <input v-model="description" type="text" class="form-control" id="description">
+            </div>
+            <button @click="transfer" class="btn btn-success">TRANSFER</button>
+        </div>
+    </main>
+
+     <!--FOOTER-->
+     <div class="footer m-0 bg-dark w-100">
+        <footer>
+            <div class="container p-4">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 mb-4">
+                        <h2 class="mb-3">MindHub Brothers</h2>
+                        <p>
+                            Our homebanking service gives you an easy and secure way to manage your personal and business 
+                            finances online. If you still don't have access to our Homebanking platform, sign up today and 
+                            start enjoying all the benefits we offer."
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <h5 class="mb-3 text-uppercase">Management and protection</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-1">
+                                <a href="#!" class="text-white" >Privacy Policy</a>
+                            </li>
+                            <li class="mb-1">
+                                <a href="#!" class="text-white">Terms and Conditions</a>
+                            </li>
+                            <li class="mb-1">
+                                <a href="#!" class="text-white">Press room</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Safety</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Contact us</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#!" class="text-white"><i class="fas fa-at fa-fw fa-sm me-2"></i>1-877-614-7600</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white"><i
+                                        class="fas fa-shipping-fast fa-fw fa-sm me-2"></i>Voice Banking System</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white"><i class="fas fa-envelope fa-fw fa-sm me-2"></i>Join the
+                                    newsletter</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container mb-4">
+                    <div class="bg-dark text-center text-white">
+                        <div class="container p-4 pb-0">
+                            <section>
+                                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                                        class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                                        class="fab fa-instagram"></i></a>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!--BOOTSTRAP-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <!--JS SCRIPT-->
+    <script src="./assets/scripts/transfer.js"></script>
+</body>
+
+</html>
