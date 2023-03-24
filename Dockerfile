@@ -6,4 +6,4 @@ RUN gradle build
 
 EXPOSE 8080
 
-ENTRYPOINT ["java","-jar","build/linbs/HomeBanking-0.0.1-SNAPSHOP.jar"]
+ENTRYPOINT ["java","-jar","build/linbs/homebanking-0.0.1-SNAPSHOP.jar"]
