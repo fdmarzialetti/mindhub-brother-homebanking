@@ -132,6 +132,11 @@ public class LoanController {
             errorFound =true;
             errorMsgs.add(loan.getPayments()+" is not a payment available for the requested loan");
         }
+
+        if(clientService.findByEmail(auth.getName()).getLoans().stream().anyMatch(l->l.getId()==loan.getId())){
+            errorFound =true;
+            errorMsgs.add("you already have this loan");
+        }
 //      Send ErrorMsgs
         if(errorFound){
             return new ResponseEntity<>(errorMsgs,HttpStatus.FORBIDDEN);
