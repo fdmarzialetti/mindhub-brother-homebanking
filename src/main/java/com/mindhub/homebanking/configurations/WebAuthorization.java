@@ -66,9 +66,9 @@ public class WebAuthorization{
         http.formLogin().successHandler((req, res, auth) -> {
 //            clearAuthenticationAttributes(req);
             if(auth.getAuthorities().contains(new SimpleGrantedAuthority("ADMIN"))){
-                res.sendRedirect("/web/manager.html");
+                res.setHeader("res","/web/manager.html");
             }else{
-                res.sendRedirect("/web/accounts.html");
+                res.setHeader("res","/web/accounts.html");
             }
         });
 

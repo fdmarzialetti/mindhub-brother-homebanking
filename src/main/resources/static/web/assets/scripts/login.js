@@ -27,7 +27,9 @@ createApp({
                     Swal.fire({
                         title: 'Login Success',
                         icon: 'success',
-                    }).then(res => window.location.assign(response.request.responseURL))
+                    }).then( ()=>{
+                        console.log(response)
+                        window.location.assign(response.headers.res)})
                 })
                 .catch(error => {
                     Swal.fire({

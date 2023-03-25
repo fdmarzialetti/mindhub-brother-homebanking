@@ -134,6 +134,4 @@ public class CardController {
         return new ResponseEntity<>("Payment Success",HttpStatus.ACCEPTED);
     }
 
-
-
 }
