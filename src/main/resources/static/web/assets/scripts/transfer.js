@@ -48,17 +48,42 @@ createApp({
                         "&amount=" + this.amount +
                         "&description=" + this.description
                     )
-                    window.location.assign("/web/accounts.html")
+                    Swal.fire({
+                        title: accountType+'Successfull money transfer',
+                        icon: 'success',
+                    })
+                    .then(()=>window.location.assign("/web/accounts.html"))
+                    .catch(res=>{
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Transfer error',
+                            text: res.response,
+                        })
+                    })
+                    
                 } catch (error) {
-                    console.log(error)
+                    console.log(error.response)
                 }
             }
             if (this.originNumber == "" || this.destinationNumber == "" || this.amount == "" || this.description == "") {
-                alert("you must complete all the fields")
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Transfer error',
+                    text: 'You must complete all the fields',
+                })
             } else {
-                if (confirm("you want to transfer?")) {
-                    transfer()
-                }
+                Swal.fire({
+                    title: 'Are you sure to send money?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Send'
+                }).then((result) => {
+                    if (result.isConfirmed){
+                        transfer()
+                    }
+                })
             }
         },
         setLeftAccounts: function () {

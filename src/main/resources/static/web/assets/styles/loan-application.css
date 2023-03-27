@@ -82,6 +82,21 @@ select{
     text-shadow: none;
 }
 
+.swal2-title{
+    text-shadow: 1px 1px 1px var(--ligthgray) !important;
+    color: var(--darkgray) !important;
+}
+
+.swal2-html-container{
+    text-shadow: 1px 1px 1px var(--ligthgray) !important;
+    color: var(--darkgray) !important;
+}
+
+.swal2-icon-content{
+    text-shadow: none!important;
+    color:rgb(248,187,134)!important;
+}
+
 .footer {
     border-top: 2px solid var(--ligthgray);
     color: white;

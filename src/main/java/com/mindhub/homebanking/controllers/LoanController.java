@@ -82,64 +82,41 @@ public class LoanController {
     @PostMapping("/loans")
     public ResponseEntity<Object> requestLoan(@RequestBody LoanApplicationDTO loan, Authentication auth){
 
-        Boolean errorFound=false;
-//      respuestas de error:
-        List<String> errorMsgs = new ArrayList<>();
-
-        //        403 forbidden, si alguno de los datos no es válido
         if(loan.getId()<=0){
-            errorFound=true;
-            errorMsgs.add("Invalid loan id");
+            return new ResponseEntity<>("Invalid loan id",HttpStatus.FORBIDDEN);
         }
         if(loan.getAmount()<1){
-            errorFound=true;
-            errorMsgs.add("Invalid amount (must be 1 or higher)");
+            return new ResponseEntity<>("Invalid amount (must be 1 or higher)",HttpStatus.FORBIDDEN);
         }
         if(loan.getPayments()<=0){
-            errorFound=true;
-            errorMsgs.add("Invalid payments amount");
+            return new ResponseEntity<>("Invalid payments amount",HttpStatus.FORBIDDEN);
         }
         if(loan.getAccountNumber()==""){
-            errorFound=true;
-            errorMsgs.add("Missing account number");
+            return new ResponseEntity<>("Missing account number",HttpStatus.FORBIDDEN);
         }
-
 //        403 forbidden, si la cuenta de destino no existe
         if(!accountService.existsByNumber(loan.getAccountNumber())){
-            errorFound =true;
-            errorMsgs.add("Destiny account does not exist");
+            return new ResponseEntity<>("Destiny account does not exist",HttpStatus.FORBIDDEN);
         }
-
 //        403 forbidden, si la cuenta de destino no pertenece al cliente autenticado
         if(!(accountService.findByNumber(loan.getAccountNumber()).getClient().getEmail()).equals(auth.getName())){
-            System.out.println();
-            System.out.println(auth.getName());
-            errorFound =true;
-            errorMsgs.add("The destination account does not belong to the authenticated client");
+            return new ResponseEntity<>("The destination account does not belong to the authenticated client",HttpStatus.FORBIDDEN);
         }
 //        403 forbidden, si el préstamo no existe
         if(!loanService.existsById(loan.getId())){
-            errorFound =true;
-            errorMsgs.add("Loan does not exist");
+            return new ResponseEntity<>("Loan does not exist",HttpStatus.FORBIDDEN);
         }
 //        403 forbidden, si el monto solicitado supera el monto máximo permitido del préstamo solicitado
         if(loanService.findById(loan.getId()).getMaxAmount()<loan.getAmount()){
-            errorFound =true;
-            errorMsgs.add("Requested amount exceeds the maximum allowable amount of the requested loan");
+            return new ResponseEntity<>("Requested amount exceeds the maximum allowable amount of the requested loan",HttpStatus.FORBIDDEN);
         }
 //        403 forbidden, si la cantidad de cuotas no está disponible para el préstamo solicitado
         if(loanService.findById(loan.getId()).getPayments().stream().noneMatch(p->p==loan.getPayments())){
-            errorFound =true;
-            errorMsgs.add(loan.getPayments()+" is not a payment available for the requested loan");
+            return new ResponseEntity<>(loan.getPayments()+" is not a payment available for the requested loan",HttpStatus.FORBIDDEN);
         }
 
         if(clientService.findByEmail(auth.getName()).getLoans().stream().anyMatch(l->l.getId()==loan.getId())){
-            errorFound =true;
-            errorMsgs.add("you already have this loan");
-        }
-//      Send ErrorMsgs
-        if(errorFound){
-            return new ResponseEntity<>(errorMsgs,HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("you already have this loan",HttpStatus.FORBIDDEN);
         }
 
         Client clientFound = clientService.findByEmail(auth.getName());
