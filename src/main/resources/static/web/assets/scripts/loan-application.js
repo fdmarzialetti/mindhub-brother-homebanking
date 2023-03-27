@@ -61,17 +61,18 @@ createApp({
                         "payments":this.payment,
                         "accountNumber":this.account.number
                     }
-                    )
-                    Swal.fire({
-                        title: accountType+'Successfull money transfer',
-                        icon: 'success',
-                    })
-                    .then(()=>window.location.assign("/web/accounts.html"))
+                    ).then(()=>{
+                        Swal.fire({
+                            title:'Successfull apply loan',
+                            icon: 'success',
+                        })
+                        .then(()=>window.location.assign("/web/accounts.html"))
+                    }) 
                 } catch (error) {
                         Swal.fire({
                             icon: 'error',
                             title: 'Transfer error',
-                            text: error.request.response,
+                            text: error.response,
                         })
                     console.log(error)
                 }
