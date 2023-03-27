@@ -71,8 +71,8 @@ createApp({
                 } catch (error) {
                         Swal.fire({
                             icon: 'error',
-                            title: 'Transfer error',
-                            text: error.response,
+                            title: 'Apply loan error',
+                            text: error.response.data,
                         })
                     console.log(error)
                 }
