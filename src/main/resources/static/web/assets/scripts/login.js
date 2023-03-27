@@ -79,12 +79,22 @@ createApp({
             axios
                 .post('/api/login', "email=" + this.email + "&password=" + this.password,
                     { headers: { 'content-type': 'application/x-www-form-urlencoded' } })
-                .then(response => {
-                    window.location.assign(response.headers.res)
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
+                    .then(response => {
+                        Swal.fire({
+                            title: 'Singup Success',
+                            icon: 'success',
+                        }).then( ()=>{
+                            console.log(response)
+                            window.location.assign(response.headers.res)})
+                    })
+                    .catch(error => {
+                        Swal.fire({
+                            title: 'Login denied',
+                            text: 'Please verify the input data',
+                            icon: 'error',
+                        })
+                    }
+                    )
         },
         changeLogin: function () {
             this.log = !this.log

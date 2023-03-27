@@ -40,8 +40,6 @@ public class WebAuthorization{
                 .antMatchers(HttpMethod.POST,"api/loans").hasAuthority("CLIENT")
                 .antMatchers(HttpMethod.POST,"api/card/payment").permitAll()
                 .antMatchers(HttpMethod.GET,"api/loans").hasAuthority("CLIENT");
-
-
         http.formLogin()
                 .usernameParameter("email")
                 .passwordParameter("password")

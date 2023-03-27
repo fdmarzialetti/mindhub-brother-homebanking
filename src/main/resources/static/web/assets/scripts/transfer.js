@@ -39,7 +39,7 @@ createApp({
                     } 
                 })
         },
-        transfer: function () {
+        doTransfer: function () {
             const transfer = async () => {
                 try {
                     const res = await axios.post('/api/transactions',
@@ -49,7 +49,7 @@ createApp({
                         "&description=" + this.description
                     )
                     Swal.fire({
-                        title: accountType+'Successfull money transfer',
+                        title: 'Successfull money transfer',
                         icon: 'success',
                     })
                     .then(()=>window.location.assign("/web/accounts.html"))
@@ -96,7 +96,6 @@ createApp({
             }else{
                 this.destinationNumber="";
             }
-            
             this.radio = event.target.id
         },
     }
