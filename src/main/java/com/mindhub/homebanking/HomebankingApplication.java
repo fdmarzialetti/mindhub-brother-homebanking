@@ -21,9 +21,6 @@ public class HomebankingApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HomebankingApplication.class, args);
-		String date = "2010-05-05";
-		LocalDate localDate = LocalDate.parse(date);
-		System.out.println(localDate);
 		System.out.println("Running program!");
 	}
 

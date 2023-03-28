@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -126,7 +126,7 @@
                     <h3 class="text-black-shadow">Credit Cards</h3>
                 </div>
                 <div class="d-flex flex-column flex-lg-row align-items-center justify-content-evenly gap-2">
-                    <div v-if="creditCards.length>=1" class="credit-card">
+                    <div v-if="load && creditCards.length>=1" class="credit-card">
                         <div class="d-flex justify-content-between align-items-center">
                             <button class="mb-1 btn btn-danger btn-sm align-self-end"
                                 @click="deleteCard(creditCards[0])">Delete</button>
@@ -189,7 +189,7 @@
                         </div>
                     </div>
 
-                    <div v-if="creditCards.length>=2" class="credit-card">
+                    <div v-if="load && creditCards.length>=2" class="credit-card">
                         <div class="d-flex justify-content-between align-items-center">
                             <button class="mb-1 btn btn-danger btn-sm align-self-end"
                                 @click="deleteCard(creditCards[1])">Delete</button>
@@ -252,7 +252,7 @@
                         </div>
                     </div>
 
-                    <div v-if="creditCards.length>=3" class="credit-card">
+                    <div v-if=" load && creditCards.length>=3" class="credit-card">
                         <div class="d-flex justify-content-between align-items-center">
                             <button class="mb-1 btn btn-danger btn-sm align-self-end"
                                 @click="deleteCard(creditCards[2])">Delete</button>
@@ -325,7 +325,7 @@
                     <h3 class="text-black-shadow">Debit Cards</h3>
                 </div>
                 <div class="d-flex flex-column flex-lg-row align-items-center justify-content-evenly gap-2">
-                    <div v-if="debitCards.length>=1" class="debit-card">
+                    <div v-if="load && debitCards.length>=1  " class="debit-card">
                         <button class="mb-1 btn btn-danger btn-sm align-self-end"
                             @click="deleteCard(debitCards[0])">Delete</button>
                         <div class="account-main" :class="{titanium:debitCards[0].color==='TITANIUM', gold:debitCards[0].color==='GOLD', silver:debitCards[0].color==='SILVER'},
@@ -361,7 +361,7 @@
                             <div class="account-main">
                                 <div class="account-header">
                                     <p class="void-card">MINDHUB BROTHERS</p>
-                                    <img src="./assets/images/master-card-icon.jpg" alt="">
+                            
                                 </div>
                                 <div class="account-body d-flex justify-content-between align-items-center mt-3">
                                     <p class="fs-5 void-card">**** **** **** ****</p>
@@ -384,7 +384,7 @@
                             </div>
                         </div>
                     </div>
-                    <div v-if="debitCards.length>=2" class="credit-card">
+                    <div v-if="load && debitCards.length>=2" class="credit-card">
                         <button class="mb-1 btn btn-danger btn-sm align-self-end"
                             @click="deleteCard(debitCards[1])">Delete</button>
                         <div class="account-main" :class="{titanium:debitCards[1].color==='TITANIUM', gold:debitCards[1].color==='GOLD', silver:debitCards[1].color==='SILVER'},
@@ -420,7 +420,7 @@
                             <div class="account-main">
                                 <div class="account-header">
                                     <p class="void-card">MINDHUB BROTHERS</p>
-                                    <img src="./assets/images/master-card-icon.jpg" alt="">
+                            
                                 </div>
                                 <div class="account-body d-flex justify-content-between align-items-center mt-3">
                                     <p class="fs-5 void-card">**** **** **** ****</p>
@@ -444,7 +444,7 @@
                         </div>
                     </div>
 
-                    <div v-if="debitCards.length>=3" class="credit-card">
+                    <div v-if="load && debitCards.length>=3" class="credit-card">
                         <button class="mb-1 btn btn-danger btn-sm align-self-end"
                             @click="deleteCard(debitCards[2])">Delete</button>
                         <div class="account-main" :class="{titanium:debitCards[2].color==='TITANIUM', gold:debitCards[2].color==='GOLD', silver:debitCards[2].color==='SILVER'},
@@ -480,7 +480,7 @@
                             <div class="account-main">
                                 <div class="account-header">
                                     <p class="void-card">MINDHUB BROTHERS</p>
-                                    <img src="./assets/images/master-card-icon.jpg" alt="">
+                            
                                 </div>
                                 <div class="account-body d-flex justify-content-between align-items-center mt-3">
                                     <p class="fs-5 void-card">**** **** **** ****</p>
@@ -519,7 +519,7 @@
                         credit cards.</h3>
                 </div>
 
-                <template v-if="client.cards.length<6">
+                <template v-if="load && client.cards.length<6">
                     <button
                         class="btn btn-danger align-self-end d-flex align-items-center justify-content-center gap-2 text-black-shadow">
                         <a href="./create-cards.html" class="text-decoration-none text-white">Request a Card <i
@@ -540,7 +540,7 @@
                         :class="{titanium:card.color==='TITANIUM', gold:card.color==='GOLD', silver:card.color==='SILVER'}">
                         <div class="account-header">
                             <p>MINDHUB BROTHERS</p>
-                            <img src="./assets/images/master-card-icon.jpg" alt="">
+                    
                         </div>
                         <div class="account-body d-flex justify-content-between align-items-center mt-3">
                             <p class="fs-5">{{card.number}}</p>
@@ -576,7 +576,7 @@
                         :class="{titanium:card.color==='TITANIUM', gold:card.color==='GOLD', silver:card.color==='SILVER'}">
                         <div class="account-header">
                             <p>MINDHUB BROTHERS</p>
-                            <img src="./assets/images/master-card-icon.jpg" alt="">
+                    
                         </div>
                         <div class="account-body d-flex justify-content-between align-items-center mt-3">
                             <p class="fs-5">{{card.number}}</p>
@@ -675,8 +675,9 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
     <!--JS SCRIPT-->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./assets/scripts/cards.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
 </body>
 
 </html>

@@ -42,10 +42,10 @@ public class CardController {
             ){
      Client client = clientService.findByEmail(auth.getName());
      if(client.getCards().stream().noneMatch(c->c.getId()==cardID)){
-         return new ResponseEntity<> ("Card not found",HttpStatus.NO_CONTENT);
+         return new ResponseEntity<> ("Card not found",HttpStatus.FORBIDDEN);
      }else{
          cardService.deleteById(cardID);
-         return new ResponseEntity<>("Delete card succes",HttpStatus.ACCEPTED);
+         return new ResponseEntity<>("Delete card success",HttpStatus.ACCEPTED);
      }
 
     }
